@@ -1,0 +1,27 @@
+package com.global;
+
+
+abstract class Car {
+	
+	void tyres() {
+		
+		System.out.println("inside tyres");
+	}
+	abstract void musicSystem();
+}
+
+class Polo {
+	
+	void abs() {
+		
+		System.out.println("inside abs");
+	}
+}
+
+public class AbstractClassess {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

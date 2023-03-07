@@ -1,0 +1,5 @@
+package com.global.service;
+
+public class BookService {
+
+}

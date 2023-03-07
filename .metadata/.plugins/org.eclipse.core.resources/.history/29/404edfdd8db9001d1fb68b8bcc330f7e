@@ -1,0 +1,81 @@
+package com.global;
+
+public class Human implements Comparable<Human>{
+	
+	int iq = 50;
+	int mascularStrength = 20;
+	int height = 1;
+	
+	public Human(int val1, int val2, int val3) {
+		
+		iq = val1;
+		mascularStrength = val2;
+		height = val3;
+	}
+	
+	public Human() {
+		
+	}
+	
+	
+	public void study() {
+		
+		iq++;
+	}
+	
+	void playingBasketball() {
+		
+		height++;
+	}
+	
+	void gyming() {
+		
+		mascularStrength++;
+	}
+
+	public int getIq() {
+		return iq;
+	}
+
+	public int getMascularStrength() {
+		return mascularStrength;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+	
+	public boolean equals(Object obj) {
+		
+		System.out.println("inside equals");
+		
+		Human castedObj = (Human)obj;
+		
+		if(iq == castedObj.iq) {
+			
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public String toString() {
+		
+		return iq+", "+mascularStrength+", "+height;
+	}
+	
+	public int hashCode() {
+		
+		return 7;
+	}
+
+	@Override
+	public int compareTo(Human o) {
+		
+		
+	}
+	
+	
+
+}

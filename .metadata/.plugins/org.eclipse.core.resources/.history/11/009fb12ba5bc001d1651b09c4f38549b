@@ -1,0 +1,324 @@
+package com.global;
+
+class MyRunnable implements Runnable {
+	
+	Account account = new Account();
+	
+	public void run(){
+		
+		makeTransaction(30);
+	}
+	
+	synchronized public void makeTransaction(int amount) {
+		
+		if(account.getAmount() >= amount) {
+			
+			System.out.println(Thread.currentThread().getName()+" is going to transact");
+			
+			account.withDrawl(amount);
+			
+			System.out.println(Thread.currentThread().getName()+" has transacted successfully and the balance amout"
+					+ "is "+account.getAmount() );
+		}
+		else {
+			
+			System.out.println(Thread.currentThread().getName()+" insufficient funds");
+		}
+	}
+}
+
+public class Runner {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		System.out.println("inside main()...");
+		
+		MyRunnable runnable = new MyRunnable();
+		
+		Thread t1 = new Thread(runnable);
+		Thread t2 = new Thread(runnable);
+		
+		t1.setName("Eshaan");    t2.setName("Ashu");
+		
+		t1.start();     t2.start();	
+	}
+}
+
+//class MyRunnable implements Runnable {
+//	
+//	public void run(){
+//		
+//		try {
+//			System.out.println(Thread.currentThread().getName());
+//			Thread.sleep(2000);
+//			System.out.println("after sleep");
+//		} catch (InterruptedException e) {
+//			
+//			e.printStackTrace();
+//		}
+//	}
+//}
+//
+//public class Runner {
+//
+//	public static void main(String[] args) throws InterruptedException {
+//		
+//		System.out.println("inside main()...");
+//		
+//		MyRunnable runnable = new MyRunnable();
+//		
+//		Thread t1 = new Thread(runnable);
+//		Thread t2 = new Thread(runnable);
+//		
+//		t1.start();     t2.start();	
+//	}
+//}
+
+
+
+//class MyRunnable implements Runnable {
+//	
+//	int counter = 0;
+//	
+//	Thread thread;
+//
+//	public void run(){
+//		
+//		try {
+//			
+//			if( counter == 0) {
+//				
+//				thread = Thread.currentThread();
+//				counter++;
+//			}
+//			
+//			if(thread != Thread.currentThread()) {
+//				
+//				
+//				thread.join();
+//			}
+//			
+//			for(int i = 0; i < 50; i++) {
+//				
+//				System.out.println(Thread.currentThread()+", "+i);
+//			}
+//		
+//		}
+//		catch(Exception e ) {
+//			
+//			e.printStackTrace();
+//		}
+//		
+//	}
+//}
+
+//public class Runner {
+//
+//	public static void main(String[] args) throws InterruptedException {
+//		
+//		System.out.println("inside main()...");
+//		
+//		MyRunnable runnable = new MyRunnable();
+//		
+//		Thread t1 = new Thread(runnable);
+//		Thread t2 = new Thread(runnable);
+//		t1.setName("Archit");     t2.setName("Mayur");
+//		
+//		t1.start();       
+//		
+//		 t2.start();	
+//	}
+//
+//}
+
+//class MyRunnable implements Runnable {
+//
+//	public void run() {
+//
+//		for(int i = 0; i < 500; i++) {
+//			
+//			System.out.println(Thread.currentThread()+", "+i);
+//		}
+//	}
+//}
+//
+//public class Runner {
+//
+//	public static void main(String[] args) throws InterruptedException {
+//		
+//		System.out.println("inside main()...");
+//		
+//		MyRunnable runnable = new MyRunnable();
+//		
+//		Thread t1 = new Thread(runnable);
+//		Thread t2 = new Thread(runnable);
+//		
+//		t1.start();     
+//		
+//		t1.join();     
+//		
+//		 t2.start();    t2.join();
+//		
+//		System.out.println("End of program...");
+//
+//		
+//	}
+//
+//}
+
+//class MyRunnable implements Runnable {
+//
+//	public void run() {
+//
+//		for(int i = 0; i < 500; i++) {
+//			
+//			System.out.println(Thread.currentThread()+", "+i);
+//		}
+//	}
+//}
+//
+//public class Runner {
+//
+//	public static void main(String[] args) throws InterruptedException {
+//		
+//		System.out.println("inside main()...");
+//		
+//		MyRunnable runnable = new MyRunnable();
+//		
+//		Thread t1 = new Thread(runnable);
+//		Thread t2 = new Thread(runnable);
+//		
+//		t1.start();      t2.start();
+//		
+//		t1.join();      t2.join();
+//		
+//		System.out.println("End of program...");
+//
+//		
+//	}
+//
+//}
+
+//class MyRunnable implements Runnable {
+//
+//	public void run() {
+//
+//		for(int i = 0; i < 20; i++) {
+//			
+//			System.out.println(i);
+//		}
+//	}
+//}
+//
+//public class Runner {
+//
+//	public static void main(String[] args) {
+//		
+//		System.out.println("inside main()...");
+//		
+//		MyRunnable runnable = new MyRunnable();
+//		
+//		Thread t1 = new Thread(runnable);
+//		
+//		t1.start();
+//
+//		
+//	}
+//
+//}
+
+
+//class MyThread extends Thread {
+//
+//	public void run() {
+//
+//		for (int i = 0; i < 20; i++) {
+//
+//			System.out.println(Thread.currentThread().getName()+" "+i);
+//		}
+//	}
+//}
+//
+//public class Runner {
+//
+//	public static void main(String[] args) {
+//		
+//		Thread.currentThread().setName("Interviewer");
+//
+//		System.out.println("Hello world...");
+//
+//		MyThread t1 = new MyThread();
+//		MyThread t2 = new MyThread();
+//		t1.setName("Sagar");    t2.setName("Ashu");
+//		
+//		t1.start();      t2.start();
+//		
+//		for (int i = 0; i < 20; i++) {
+//
+//			System.out.println(Thread.currentThread().getName()+" "+i);
+//		}
+//
+//		
+//	}
+//
+//}
+
+
+//class MyThread extends Thread {
+//
+//	public void run() {
+//
+//		for (int i = 0; i < 50; i++) {
+//
+//			System.out.println(Thread.currentThread().getName()+" "+i);
+//		}
+//	}
+//}
+//
+//public class Runner {
+//
+//	public static void main(String[] args) {
+//
+//		System.out.println("Hello world...");
+//
+//		MyThread t1 = new MyThread();
+//		MyThread t2 = new MyThread();
+//		t1.setName("Sagar");    t2.setName("Ashu");
+//		
+//		t1.start();      t2.start();
+//
+//		
+//	}
+//
+//}
+
+
+//class MyThread extends Thread {
+//
+//	public void run() {
+//
+//		for (int i = 0; i < 50; i++) {
+//
+//			System.out.println("inside run() "+i);
+//		}
+//	}
+//}
+//
+//public class Runner {
+//
+//	public static void main(String[] args) {
+//
+//		System.out.println("Hello world...");
+//
+//		MyThread myThread = new MyThread();
+//
+//		myThread.start();
+//
+//		for (int i = 0; i < 50; i++) {
+//
+//			System.out.println("inside main() "+i);
+//		}
+//
+//	}
+//
+//}

@@ -1,0 +1,46 @@
+package com.global;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+
+import com.global.db.DBConnection;
+import com.global.repository.UserRepository;
+import com.mysql.cj.protocol.Resultset;
+
+public class Runner {
+
+	public static void main(String[] args) throws Exception {
+		
+		UserRepository repository = new UserRepository();
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Press 1 for Registration and 2 for login and 0 for exit");
+
+		int mainMenuChoice = sc.nextInt();
+
+		switch (mainMenuChoice) {
+
+		case 1:
+
+			repository.register();
+
+			break;
+
+		case 2:
+
+			
+			break;
+			
+		case 0:
+			System.out.println("Logged-out Successfully...");
+		}
+
+	}
+	
+	
+
+}

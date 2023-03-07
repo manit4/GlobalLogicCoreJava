@@ -1,0 +1,35 @@
+package com.global.repository;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import com.global.db.DBConnection;
+
+public class UserRepository {
+	
+	public void register() throws SQLException {
+		
+		Scanner sc = new Scanner(System.in);
+		Connection connection  = DBConnection.getConnection();
+		
+		System.out.println("Enter your Id!!");
+		int id = sc.nextInt();
+
+		System.out.println("Enter your Name");
+		String name = sc.next();
+
+		System.out.println("Enter your Email");
+		String email = sc.next();
+
+		PreparedStatement statement = connection.prepareStatement("insert into user values(?, ?, ?)");
+
+		statement.setInt(1, id);
+		statement.setString(2, name);
+		statement.setString(3, email);
+
+		statement.executeUpdate();
+	}
+
+}

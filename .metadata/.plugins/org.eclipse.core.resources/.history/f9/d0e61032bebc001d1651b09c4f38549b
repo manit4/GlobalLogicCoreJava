@@ -1,0 +1,9 @@
+package com.global.to;
+
+public class BookTO {
+	
+	private int id;
+	private String name;
+	private int price;
+
+}

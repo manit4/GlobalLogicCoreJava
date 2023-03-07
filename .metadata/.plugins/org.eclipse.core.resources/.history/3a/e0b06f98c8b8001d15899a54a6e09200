@@ -1,0 +1,55 @@
+package com.global;
+
+
+
+abstract class Car {//this shows, abstract class does not have abstract methods and you can not create object 
+						//of abstract class...
+	
+	void tyres() {
+		
+		System.out.println("inside tyres");
+	}
+	void musicSystem() {
+		
+	}
+}
+
+class Polo {
+	
+	void abs() {
+		
+		System.out.println("inside abs");
+	}
+}
+
+public class AbstractClassess {
+	
+	public static void main(String[] args) {
+		
+	}
+}
+
+//
+//abstract class Car {//Abstract classes can have both abstract methods and non-abstract methods
+//	
+//	void tyres() {
+//		
+//		System.out.println("inside tyres");
+//	}
+//	abstract void musicSystem();
+//}
+//
+//class Polo {
+//	
+//	void abs() {
+//		
+//		System.out.println("inside abs");
+//	}
+//}
+//
+//public class AbstractClassess {
+//	
+//	public static void main(String[] args) {
+//		
+//	}
+//}

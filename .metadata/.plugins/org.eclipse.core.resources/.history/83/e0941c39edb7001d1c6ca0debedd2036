@@ -1,0 +1,170 @@
+package com.global;
+
+import java.util.Scanner;
+
+public class ExceptionHandling {
+
+	public static void main(String[] args) {
+		
+		divideNumber();
+		
+
+	}
+
+	static void divideNumber() {
+		
+		try {
+			
+			int i = 100;
+
+			Scanner sc = new Scanner(System.in);
+
+			System.out.println("Enter divider!!");
+
+			int number = sc.nextInt();
+
+			int result = i / number;
+			System.out.println(result);
+			
+		}
+		catch (ArithmeticException e) {
+			// TODO: handle exception
+		}
+
+		
+		
+		charAccess();
+
+	}
+
+	static void charAccess() {
+		
+		try {
+			
+			Scanner sc = new Scanner(System.in);
+
+			String name = "Anurag";
+
+			System.out.println("Enter any index which you would like to access!!");
+
+			int index = sc.nextInt();
+
+			char character = name.charAt(index);
+
+			System.out.println(character);
+		}
+		catch (StringIndexOutOfBoundsException e) {
+			// TODO: handle exception
+		}
+
+		
+
+	}
+
+//public class ExceptionHandling {
+//
+//public static void main(String[] args) {
+//	
+//	try {
+//		
+//		int i = 100;
+//		String name = "Anurag";
+//		
+//		Scanner sc = new Scanner(System.in);
+//		
+//		System.out.println("Enter divider!!");
+//		
+//		int number = sc.nextInt();
+//		
+//		int result = i/number;
+//		
+//		System.out.println("Enter any index which you would like to access!!");
+//		
+//		int index = sc.nextInt();
+//		
+//		char character = name.charAt(index);
+//		
+//		System.out.println(result);
+//		System.out.println(character);
+//	}
+//	catch(ArithmeticException e) {
+//		
+//		System.out.println("Do not enter 0 as divider");
+//		main(null);
+//	}
+//	catch (StringIndexOutOfBoundsException e) {
+//		System.out.println("Do not give any index out of range!!");
+//		main(null);
+//	}
+//	
+//	
+//}
+
+}
+
+//public class ExceptionHandling {
+//	
+//	public static void main(String[] args) {
+//		
+//		try {
+//			
+//			int i = 100;
+//			
+//			Scanner sc = new Scanner(System.in);
+//			
+//			System.out.println("Enter divider!!");
+//			
+//			int number = sc.nextInt();
+//			
+//			int result = i/number;
+//			
+//			System.out.println(result);
+//		}
+//		catch(Exception e) {
+//			
+//			e.printStackTrace();
+//			System.out.println("Do not enter 0 as divider");
+//			main(null);
+//		}
+//		
+//		
+//	}
+//
+//}
+
+//public class ExceptionHandling {
+//	
+//	public static void main(String[] args) {
+//		
+//		try {
+//			
+//			int i = 100;
+//			String name = "Anurag";
+//			
+//			Scanner sc = new Scanner(System.in);
+//			
+//			System.out.println("Enter divider!!");
+//			
+//			int number = sc.nextInt();
+//			
+//			int result = i/number;
+//			
+//			System.out.println("Enter any index which you would like to access!!");
+//			
+//			int index = sc.nextInt();
+//			
+//			char character = name.charAt(index);
+//			
+//			System.out.println(result);
+//			System.out.println(character);
+//		}
+//		catch(Exception e) {
+//			
+//			e.printStackTrace();
+//			System.out.println("Do not enter 0 as divider");
+//		}
+//		
+//		
+//	}
+//
+//}

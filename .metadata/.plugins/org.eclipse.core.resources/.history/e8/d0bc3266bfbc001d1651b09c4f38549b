@@ -1,0 +1,17 @@
+package com.global.service;
+
+
+import java.util.List;
+
+import com.global.to.BookTO;
+
+public class BookService {
+	
+	public List<BookTO> getAllBooks() {
+		
+		return null;
+		
+		
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.global.Thread.java&apos; to &apos;Runner.java&apos;&#x0D;&#x0A;- Original project: &apos;MyFirstProject&apos;&#x0D;&#x0A;- Original element: &apos;com.global.Thread.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.global.Runner.java&apos;" description="Rename compilation unit &apos;Thread.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.global{Thread.java" name="Runner.java" references="false" stamp="1678078846724" version="1.0"/>
+</session>

@@ -1,0 +1,5 @@
+package com.global.repository;
+
+public class UserRepository {
+
+}

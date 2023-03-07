@@ -1,0 +1,14 @@
+package com.global;
+
+
+class Car {
+	
+	void tyres() {
+		
+		System.out.println("inside tyres");
+	}
+}
+
+public class AbstractClassess {
+
+}

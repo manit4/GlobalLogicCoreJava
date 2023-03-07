@@ -1,0 +1,48 @@
+package com.global.repository;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import com.global.db.DBConnection;
+
+public class UserRepository {
+	
+	
+	Connection connection  = DBConnection.getConnection();
+	
+	public void register(int id, String name, String email) {
+		
+		try {
+			
+			PreparedStatement statement = connection.prepareStatement("insert into user values(?, ?, ?)");
+
+			statement.setInt(1, id);
+			statement.setString(2, name);
+			statement.setString(3, email);
+
+			statement.executeUpdate();
+		}
+		catch (Exception e) {
+			System.out.println("inside regsiter of UserRepository");
+		}
+
+		
+	}
+	
+	public void login(int id) throws SQLException {
+		
+		try {
+			
+			
+		}
+		catch(Exception e) {
+			
+			System.out.println("inside catch of Login of UserRepo");
+		}
+		
+	}
+
+}

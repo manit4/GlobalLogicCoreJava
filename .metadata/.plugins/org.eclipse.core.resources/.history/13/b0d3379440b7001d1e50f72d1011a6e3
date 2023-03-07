@@ -1,0 +1,5 @@
+package com.global.pojo;
+
+public class Employee {
+
+}
