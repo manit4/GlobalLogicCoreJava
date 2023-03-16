@@ -1,5 +1,0 @@
-package com.global.db;
-
-public class DBConnection {
-
-}
