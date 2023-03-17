@@ -10,11 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.gl.repository.UserRepository;
+import com.gl.service.UserService;
 import com.gl.to.User;
 
 @WebServlet("/user")
 public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	UserService service = new UserService();
+	
+	public UserServlet() {
+		System.out.println("Inside User servlet constructor");
+	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -33,12 +40,14 @@ public class UserServlet extends HttpServlet {
 
 		User user = new User(username, password, completeName, email);
 		
-		UserRepository repository = new UserRepository();
-		repository.save(user);
+//		UserRepository repository = new UserRepository();
+//		repository.save(user);
+		
+		service.register(user);
 		
 		PrintWriter writer = response.getWriter();
 
-		writer.println("<html><body>Thanks for registering with us...</body></html>");
+		writer.println("<html><body>Thanks for Registering with us...</body></html>");
 	}
 
 }

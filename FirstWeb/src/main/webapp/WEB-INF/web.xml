@@ -4,6 +4,12 @@
   <!-- <welcome-file-list>
   	<welcome-file>riya.html</welcome-file>
   </welcome-file-list> -->
+  
+  <servlet>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<servlet-class>com.gl.controller.LoginServlet</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
  
 </web-app>
 
