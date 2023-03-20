@@ -86,5 +86,72 @@ public class UserRepository {
 		
 		return users;
 	}
+	
+	
+	public void delete(String username) {
+		
+		try {
+			
+			PreparedStatement statement = conn.prepareStatement("delete from user where username = ?");
+			
+			statement.setString(1, username);
+			statement.executeUpdate();
+		}
+		catch (Exception e) {
+			System.out.println("inside catch of delete of UserRepository");
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+public User findUserByUsername(String username) {
+		
+		User user = null;
+		
+		try {
+			
+			PreparedStatement statement = conn.prepareStatement("select * from user where username = ?");
+			statement.setString(1, username);
+			
+			ResultSet resultSet = statement.executeQuery();
+			
+			if(resultSet.next()) {
+				
+				String name = resultSet.getString(3);
+				String email = resultSet.getString(4);
+				String password = resultSet.getString(2);
+				
+				user = new User(username, password, name, email);
+			}
+		}
+		catch (Exception e) {
+			System.out.println("inside catch of find() of UserRepository");
+			e.printStackTrace();
+		}
+		return user;
+	}
+	
+	public void update(User user) {
+		
+		try {
+			
+			
+			System.out.println("update "+user.getCompleteName()+" "+user.getEmail()+", "+user.getUsername());
+			PreparedStatement statement = conn.prepareStatement("update user set complete_name = ?, email = ? where username = ?");
+			statement.setString(1, user.getCompleteName());
+			statement.setString(2, user.getEmail());
+			statement.setString(3, user.getUsername());
+			
+			statement.executeUpdate();
+		}
+		
+		catch (Exception e) {
+			System.out.println("inside catch of update of UserServlet...");
+			e.printStackTrace();
+		}
+		
+		
+	}
 
 }

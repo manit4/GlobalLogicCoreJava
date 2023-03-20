@@ -21,7 +21,7 @@
 	
 	
 	<a href="FirstServlet">click here </a>
-	<form action="login" method="post">
+	<form action="user?action=login" method="post">
 	<label>UserName</label><input type="text" name="username"></input><br><br>
 	<label>Password</label><input type="password" name="pwd"></input><br><button type ="Submit">Login</button>
 	</form>

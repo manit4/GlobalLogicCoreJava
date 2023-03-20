@@ -14,18 +14,22 @@ import javax.servlet.http.HttpServletResponse;
 import com.gl.service.UserService;
 import com.gl.to.User;
 
-
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
-	
+
 	UserService service = new UserService();
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		System.out.println("inside doGet of LoginServlet");
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+//		System.out.println("inside doGet of LoginServlet fir delete");
+//
+//		String username = request.getParameter("username");
+//
+//		System.out.println("username is " + username);
+
 	}
 
-	
 //	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //		
 //		System.out.println("inside doPost of LoginServlet");
@@ -64,32 +68,32 @@ public class LoginServlet extends HttpServlet {
 //					+ "</html>	");
 //		}
 //	}
-	
-protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		System.out.println("inside doPost of LoginServlet");
-		
-		String username = request.getParameter("username");
-		String password = request.getParameter("pwd");
-	
-		System.out.println(username+", "+password);
-		
-		User user = service.login(username, password);
-		
-		PrintWriter writer = response.getWriter();
-		
-		if(user != null) {
-			request.setAttribute("userData", user);
-			List<User> users = service.findAll();
-			request.setAttribute("users", users);
-			RequestDispatcher dispatcher =  request.getRequestDispatcher("welcome.jsp");
-			dispatcher.include(request, response);
-		}
-		else {
-			RequestDispatcher dispatcher =  request.getRequestDispatcher("index.jsp");
-			request.setAttribute("errorMessage", "Wrong Credentials, please try again!!");
-			dispatcher.forward(request, response);
-		}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+//		System.out.println("inside doPost of LoginServlet");
+//
+//		String username = request.getParameter("username");
+//		String password = request.getParameter("pwd");
+//
+//		System.out.println(username + ", " + password);
+//
+//		User user = service.login(username, password);
+//
+//		PrintWriter writer = response.getWriter();
+//
+//		if (user != null) {
+//			request.setAttribute("userData", user);
+//			List<User> users = service.findAll();
+//			request.setAttribute("users", users);
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("welcome.jsp");
+//			dispatcher.include(request, response);
+//		} else {
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+//			request.setAttribute("errorMessage", "Wrong Credentials, please try again!!");
+//			dispatcher.forward(request, response);
+//		}
 	}
 
 }
