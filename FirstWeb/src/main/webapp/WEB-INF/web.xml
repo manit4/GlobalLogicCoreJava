@@ -5,11 +5,34 @@
   	<welcome-file>riya.html</welcome-file>
   </welcome-file-list> -->
   
-  <servlet>
+  <!-- <servlet>
   	<servlet-name>LoginServlet</servlet-name>
   	<servlet-class>com.gl.controller.LoginServlet</servlet-class>
   	<load-on-startup>1</load-on-startup>
+  </servlet> -->
+  
+  <servlet>
+  	<servlet-name>UserServlet</servlet-name>
+  	<servlet-class>com.gl.controller.UserServlet</servlet-class>
+  	<init-param>
+  		<param-name>configdata</param-name>
+  		<param-value>I am fetching config data in UserServlet</param-value>
+  	</init-param>
   </servlet>
+  <servlet-mapping>
+  	<servlet-name>UserServlet</servlet-name>
+  	<url-pattern>/user</url-pattern>
+  </servlet-mapping>
+  
+  <session-config>
+  	<session-timeout>3</session-timeout>
+  </session-config>
+  
+  <context-param>
+  	<param-name>contextdata</param-name>
+  	<param-value>I am fetching Context Data from web.xml from Servlet Context</param-value>
+  </context-param>
+  
  
 </web-app>
 

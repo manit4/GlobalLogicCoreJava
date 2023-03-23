@@ -21,6 +21,13 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		String config = getServletConfig().getInitParameter("configdata");
+		System.out.println("Config Data is "+config);
+		
+		String context = getServletContext().getInitParameter("contextdata");
+		System.out.println("Context Data from LoginServlet is "+context);
+		
 
 //		System.out.println("inside doGet of LoginServlet fir delete");
 //

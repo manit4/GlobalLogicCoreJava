@@ -15,8 +15,13 @@
 <body>
 
 	<%
-	User user = (User) request.getAttribute("userData");
-	List<User> users = (List<User>) request.getAttribute("users");
+	/* User user = (User) request.getAttribute("userData");
+	List<User> users = (List<User>) request.getAttribute("users"); */
+	
+	User user = (User) session.getAttribute("userData");
+	List<User> users = (List<User>) session.getAttribute("users");
+	
+	
 %>
 	<H2>
 		Welcome
@@ -42,8 +47,11 @@
 				<td><%= users.get(i).getUsername() %></td>
 				<td><%= users.get(i).getCompleteName() %></td>
 				<td><%= users.get(i).getEmail() %></td>
-				<td><a href="user?action=delete&username=<%= users.get(i).getUsername()%>&loggedIn=<%= user.getUsername() %>">delete</a></td>
-				<td><a href="user?action=update&username=<%= users.get(i).getUsername()%>&loggedIn=<%= user.getUsername() %>">update</a></td>
+				<%-- <td><a href="user?action=delete&username=<%= users.get(i).getUsername()%>&loggedIn=<%= user.getUsername() %>">delete</a></td>
+				<td><a href="user?action=update&username=<%= users.get(i).getUsername()%>&loggedIn=<%= user.getUsername() %>">update</a></td> --%>
+				
+				<td><a href="user?action=delete&username=<%= users.get(i).getUsername()%>">delete</a></td>
+				<td><a href="user?action=update&username=<%= users.get(i).getUsername()%>">update</a></td>
 				
 			</tr>
 			<%} %>
