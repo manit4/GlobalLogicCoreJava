@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <bean name="restaurant" class="Restaurant" autowire="byType">
+    	
+    </bean>
+    
+    <bean name="tea" class="Tea"></bean>
+    
+    
+    
+    
+    <!-- <bean id="restaurantBean" class="Restaurant" lazy-init="true">
+    	<property name="name" value="ABC Restaurants Chains Pvt Ltd."></property>
+    </bean> -->
+    
+    <!-- <bean id="restaurantBean" class="Restaurant">
+    	<constructor-arg name="tea" ref="teaBean"></constructor-arg>
+    </bean>
+    
+    <bean id="teaBean" class="Tea"></bean> -->
+    
+    <!-- <bean id="restaurantBean" class="Restaurant">
+    	<constructor-arg name="name" value=""></constructor-arg>
+    </bean> -->
+    
+    <!-- <bean id="restaurantBean" class="Restaurant">
+    	<property name="name" value="ABC Restaurants Chains Pvt Ltd."></property>
+    </bean> -->
+
+</beans>

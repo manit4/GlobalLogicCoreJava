@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="com.gl.to.User, java.util.List"%>
 <!DOCTYPE html>
 <html>
@@ -18,14 +19,25 @@
 	/* User user = (User) request.getAttribute("userData");
 	List<User> users = (List<User>) request.getAttribute("users"); */
 	
-	User user = (User) session.getAttribute("userData");
+	/* User user = (User) session.getAttribute("userData"); */
 	List<User> users = (List<User>) session.getAttribute("users");
 	
 	
 %>
+<h1>I am using Jsp Standard Action tag</h1>
+<%-- <jsp:useBean id="userData" class="com.gl.to.User" scope="session"/>
+<jsp:getProperty property="completeName" name="userData"/> --%>
+
+
+<H2>I am using EL(Expression Tag)</H2>
+
+${userData.getCompleteName() }
+
+${ users.get(5).getCompleteName() }
+
 	<H2>
 		Welcome
-		<%= user.getCompleteName() %></H2>
+		<%-- <%= userData.getCompleteName() %> --%></H2>
 
 	<table class="table">
 		<thead>
@@ -58,5 +70,10 @@
 
 		</tbody>
 	</table>
+	
+	<c:forEach var="i" begin="0" end="${users.size() }">
+		<c:out value="${ users.get(${i})}"></c:out>
+	</c:forEach>
+	
 </body>
 </html>

@@ -1,0 +1,142 @@
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+
+public class Jdbc {
+	
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		
+		
+		
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		
+		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gl", "root", "root");
+		
+		PreparedStatement statement =  connection.prepareStatement("select * from user");
+		
+		ResultSet resultSet = statement.executeQuery();
+		
+		while(resultSet.next()) {
+			
+			System.out.println(resultSet.getInt(1)+", "+ resultSet.getString(2)+", "+resultSet.getString(3));
+		}
+	}
+
+}
+
+
+
+//public class Jdbc {
+//	
+//	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+//		
+//		
+//		
+//		Class.forName("com.mysql.cj.jdbc.Driver");
+//		
+//		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gl", "root", "root");
+//		
+//		PreparedStatement statement =  connection.prepareStatement("delete from user where name is ?");
+//		
+//		statement.setString(1, null);
+//		
+//		statement.executeUpdate();
+//	}
+//
+//}
+
+//public class Jdbc {
+//	
+//	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+//		
+//		Scanner scanner = new Scanner(System.in);
+//		
+//		System.out.println("Enter your Id");
+//		int id = scanner.nextInt();
+//		
+//		System.out.println("Enter your Name");
+//		String name = scanner.next();
+//		
+//		System.out.println("Enter your Email");
+//		String email = scanner.next();
+//		
+//		Class.forName("com.mysql.cj.jdbc.Driver");
+//		
+//		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gl", "root", "root");
+//		
+//		PreparedStatement statement =  connection.prepareStatement("insert into user( id, name, email) values(?, ?, ?)");
+//		
+//		statement.setInt(1, id);
+//		statement.setString(3, email);
+//		statement.setString(2, name);
+//		
+//		statement.executeUpdate();
+//	}
+//
+//}
+
+
+//public class Jdbc {
+//	
+//	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+//		
+//		Scanner scanner = new Scanner(System.in);
+//		
+//		System.out.println("Enter your Id");
+//		int id = scanner.nextInt();
+//		
+//		System.out.println("Enter your Name");
+//		String name = scanner.next();
+//		
+//		System.out.println("Enter your Email");
+//		String email = scanner.next();
+//		
+//		Class.forName("com.mysql.cj.jdbc.Driver");
+//		
+//		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gl", "root", "root");
+//		
+//		Statement statement = connection.createStatement();
+//		
+//		statement.execute("insert into user( id, name, email) values("+id+", '"+name+"', '"+email+"')");
+//		
+//		//insert into user( id, name, email) values(1, 'Ashutosh', 'ashu@gmail.com')
+//	}
+//
+//}
+
+
+//public class Jdbc {
+//	
+//	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+//		
+//		Class.forName("com.mysql.cj.jdbc.Driver");
+//		
+//		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gl", "root", "root");
+//		
+//		Statement statement = connection.createStatement();
+//		
+//		statement.execute("insert into user( id, name, email) values(1, 'Ashutosh', 'ashu@gmail.com')");
+//	}
+//
+//}
+
+
+//public class Jdbc {
+//	
+//	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+//		
+//		Class.forName("com.mysql.cj.jdbc.Driver");
+//		
+//		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gl", "root", "root");
+//		
+//		Statement statement = connection.createStatement();
+//		
+//		statement.execute("create table user( id int, name varchar(20), email varchar(30))");
+//	}
+//
+//}

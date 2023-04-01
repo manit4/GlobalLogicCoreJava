@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org.schema/context"
+    xmlns:p="http://www.springframework.org.schema/p"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+		
+    <!-- bean definitions here -->
+    
+   <!--  <context:annotation-config></context:annotation-config> -->
+    
+    <bean name="restaurant" class="com.gl.Restaurant">
+    	
+    </bean>
+    
+    <bean name="tea" class="com.gl.Tea"></bean>
+    
+    
+    
+    
+    <!-- <bean id="restaurantBean" class="Restaurant" lazy-init="true">
+    	<property name="name" value="ABC Restaurants Chains Pvt Ltd."></property>
+    </bean> -->
+    
+    <!-- <bean id="restaurantBean" class="Restaurant">
+    	<constructor-arg name="tea" ref="teaBean"></constructor-arg>
+    </bean>
+    
+    <bean id="teaBean" class="Tea"></bean> -->
+    
+    <!-- <bean id="restaurantBean" class="Restaurant">
+    	<constructor-arg name="name" value=""></constructor-arg>
+    </bean> -->
+    
+    <!-- <bean id="restaurantBean" class="Restaurant">
+    	<property name="name" value="ABC Restaurants Chains Pvt Ltd."></property>
+    </bean> -->
+
+</beans>
